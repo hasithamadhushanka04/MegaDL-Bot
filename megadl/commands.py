@@ -23,9 +23,9 @@ async def help(bot, message, cb=False):
     me = await bot.get_me()
     button = [[
         InlineKeyboardButton(f'🏠 HOME', callback_data='back'),
-        InlineKeyboardButton(f'ABOUT 👨', callback_data='about')
+        InlineKeyboardButton(f'ABOUT 👨', url='https://t.me/CloudUpdateslk/117')
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://github.com/AsmSafone/MegaDL-Bot'),
+        InlineKeyboardButton(f'👋 Channel', url='https://t.me/CloudUpdateslk'),
         InlineKeyboardButton(f'CLOSE 🔐', callback_data='close')
         ]]
     reply_markup = InlineKeyboardMarkup(button)
@@ -54,11 +54,11 @@ async def start(bot, message, cb=False):
     owner = await bot.get_users(Config.OWNER_ID)
     owner_username = owner.username if owner.username else 'AsmSafone'
     button = [[
-        InlineKeyboardButton(f'💡 HELP', callback_data='help'),
-        InlineKeyboardButton(f'ABOUT 👨', callback_data="about")
+        InlineKeyboardButton(f'About 👨', url='https://t.me/CloudUpdateslk/117'),
+        InlineKeyboardButton(f'👋 Channel', url='https://t.me/CloudUpdateslk')
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://github.com/AsmSafone/MegaDL-Bot'),
-        InlineKeyboardButton(f'CLOSE 🔐', callback_data="close")
+        InlineKeyboardButton(f'⚒ Help', url='https://telegra.ph/This-is-MegaDL-Robot-11-23'),
+        InlineKeyboardButton(f'Close 🔐', callback_data="close")
         ]]
     reply_markup = InlineKeyboardMarkup(button)
     if cb:
@@ -87,7 +87,7 @@ async def about(bot, message, cb=False):
         InlineKeyboardButton(f'🏠 HOME', callback_data='back'),
         InlineKeyboardButton(f'HELP 💡', callback_data='help')
         ],[
-        InlineKeyboardButton(f'📦 SOURCE', url='https://github.com/AsmSafone/MegaDL-Bot'),
+        InlineKeyboardButton(f'👋 Channel', url='https://t.me/CloudUpdateslk'),
         InlineKeyboardButton(f'CLOSE 🔐', callback_data="close")
         ]]
     reply_markup = InlineKeyboardMarkup(button)
@@ -138,14 +138,14 @@ async def refreshmeh_cb(bot, message):
             user = await bot.get_chat_member(int(Config.UPDATES_CHANNEL), message.from_user.id)
             if user.status == "kicked":
                 await message.message.edit(
-                    text="Sorry Sir, You are Banned. Contact My [Support Group](https://t.me/safothebot).",
+                    text="Sorry Sir, You are Banned. Contact Me [Support](https://t.me/CrazyEvilsAssistant_bot).",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
                 return
         except UserNotParticipant:
             await message.message.edit(
-                text="**You Still Didn't Join ☹️, Please Join My Updates Channel To Use Me!**\n\nDue to Overload, Only Channel Subscribers Can Use Me!",
+                text="**ඔයා තවම update චැනල් එකට join වෙලා නැ.☹️,මාව use කරන්න නම්,කරුණාකරලා මගේ Updates Channel එකට join වෙලා ඉන්න !**\n\nDue to Overload, Only Channel Subscribers Can Use Me!",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -161,7 +161,7 @@ async def refreshmeh_cb(bot, message):
             return
         except Exception:
             await message.message.edit(
-                text="Something Went Wrong. Contact My [Support Group](https://t.me/safothebot).",
+                text="Something Went Wrong. Contact Me [Support](https://t.me/CrazyEvilsAssistant_bot).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
